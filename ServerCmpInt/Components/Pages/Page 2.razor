@@ -1,0 +1,21 @@
+﻿@page "/page"
+@using ServicesCmp.Services
+@inject MyService Service
+
+@rendermode RenderMode.InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Page 2</h1>
+<p>
+    @Service.GetData()
+</p>
+
+<NavLink href="/">Page 1</NavLink>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Service.SetComponent("Page 2");
+    }
+}
